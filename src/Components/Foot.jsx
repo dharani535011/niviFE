@@ -1,11 +1,30 @@
 import React, { useContext } from 'react'
 import { Othercontext } from './Context'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 const Foot = () => {
-  const {auths}=useContext(Othercontext)
+  const {auths,loaders}=useContext(Othercontext)
   const [auth,setauth]=auths
+  const [loader,setloader]=loaders
   const navigate=useNavigate()
+  const handlelogout=async()=>{
+    // ("okk")
+   try {
+    setloader(true)
+    const res=await axios.post("https://nivibe.onrender.com/users/logout",{},{withCredentials:true})
+    // alert(res.data.message)
+    if(res.data.message=='Logout successful'){
+      alert('Logout successful')
+      setauth(false)
+      window.location.reload()
+    }
+   } catch (error) {
+     alert(error.message)
+   }finally{
+        setloader(false)
+   }
+  }
   return (
     <div className='foot'>
         <div>
@@ -35,7 +54,7 @@ const Foot = () => {
             <p style={{opacity:".5"}}>
             At NIVI, we bring together functionality and aesthetics to provide homeowners with customised and efficient home designs. Our designers specialise in home interior designs and home décor, and help you create a personalized home to suit your lifestyle. From sophisticated living room designs to space-saving and clutter-free interior designs, we are here to help you find the best home decor and home design to match your needs and style. All our products come with up to 10-year warranty along with unwavering support and maintenance services. Explore thousands of inspiring interior designs or get a free estimate – it's all here on NIVI.com, your one stop for complete home interiors.</p>
         </div>
-        {auth&&<div><button className='logoutt'>Logout</button></div>}
+        {auth&&<div><button className='logoutt' onClick={handlelogout}>Logout</button></div>}
         {!auth&&<div><button onClick={()=>navigate("/signin")} className='logouttt'>Sign In/Up</button></div>}
     </div>
   ) 

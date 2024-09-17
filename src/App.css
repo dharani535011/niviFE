@@ -47,8 +47,8 @@
     margin-right: 15px;
 }
 @media screen and (max-width:576px){
-    .customnav div:nth-child(3){
-        display: none;
+    .lol{
+        display: none !important;
     }
 }
 @media screen and (max-width:409px){
@@ -417,6 +417,7 @@
 }
 
 @media  screen and (max-width:518px) {
+  
     .homebg{
         h1{
             /* position: relative; */
