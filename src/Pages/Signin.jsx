@@ -31,7 +31,7 @@ const Signup = () => {
     onSubmit:async(values)=>{
       try {
         setloader(true)
-        const res=await axios.post("http://localhost:3000/users/login",{
+        const res=await axios.post("https://nivibe.onrender.com/users/login",{
           email:values.email,
           password:values.password,
         },{
@@ -55,7 +55,7 @@ const Signup = () => {
   const handlesend=async()=>{
     try {
       setloader(true)
-      const res=await axios.post("http://localhost:3000/users/forgetpassword",{
+      const res=await axios.post("https://nivibe.onrender.com/users/forgetpassword",{
         email:otp,
       },{
         withCredentials:true

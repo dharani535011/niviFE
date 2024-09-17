@@ -27,7 +27,7 @@ const Changepass = () => {
         onSubmit:async(values)=>{
           try {
             setloader(true)
-            const res=await axios.post("http://localhost:3000/users/changepassword",{
+            const res=await axios.post("https://nivibe.onrender.com/users/changepassword",{
               otp:values.otp,
               password:values.password,
             },{

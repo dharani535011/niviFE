@@ -41,7 +41,7 @@ const Signin = () => {
     onSubmit:async(values)=>{
       try {
         setloader(true)
-        const res=await axios.post("http://localhost:3000/users/signup",{
+        const res=await axios.post("https://nivibe.onrender.com/users/signup",{
           email:values.email,
           password:values.password,
           name:values.name,

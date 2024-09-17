@@ -14,7 +14,7 @@ const nav=useNavigate()
 
 useEffect(()=>{
      const fetchdata=async()=>{
-          const res=await axios.post("http://localhost:3000/users/check",{},{
+          const res=await axios.post("https://nivibe.onrender.com/users/check",{},{
             withCredentials:true
           })
           if(res.data.message==="on"){

@@ -10,10 +10,10 @@ const Nav = () => {
   const [loader,setloader]=loaders
   const navigate=useNavigate()
   const handlelogout=async()=>{
-    // console.log("okk")
+    // ("okk")
    try {
     setloader(true)
-    const res=await axios.post("http://localhost:3000/users/logout",{},{withCredentials:true})
+    const res=await axios.post("https://nivibe.onrender.com/users/logout",{},{withCredentials:true})
     // alert(res.data.message)
     if(res.data.message=='Logout successful'){
       alert('Logout successful')

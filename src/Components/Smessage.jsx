@@ -24,7 +24,7 @@ const Smessage = forwardRef((props, ref) => {
     if (!mail) return; 
 
     try {
-      const res = await axios.post("http://localhost:3000/msg/view", {}, {
+      const res = await axios.post("https://nivibe.onrender.com/msg/view", {}, {
         withCredentials: true,
       });
       const data=Array.isArray(res.data)?res.data:[]
@@ -32,7 +32,7 @@ const Smessage = forwardRef((props, ref) => {
         val.user === mail || 
         (val.reciver === mail && val.auth === datas)
       );
-      // console.log("pkk")
+      // ("pkk")
       setData(filteredData);
     } catch (error) {
       console.error(error);
@@ -42,7 +42,7 @@ const Smessage = forwardRef((props, ref) => {
 
   // const checkForNewMessages = useCallback(async () => {
   //   try {
-  //     const res = await axios.post("http://localhost:3000/msg/view", {
+  //     const res = await axios.post("https://nivibe.onrender.com/msg/view", {
         
   //     }, {
   //       withCredentials: true
@@ -104,7 +104,7 @@ const Smessage = forwardRef((props, ref) => {
   const handleSend = async () => {
     if (!msgs.trim()) return; 
     try {
-      await axios.post("http://localhost:3000/msg/send", {
+      await axios.post("https://nivibe.onrender.com/msg/send", {
         authmsg: msgs,
         auth: datas,
         reciver: mail,

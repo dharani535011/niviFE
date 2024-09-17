@@ -167,7 +167,7 @@ const PaymentForm = ({wor,per,study,floor,ent,cro}) => {
     const [loading, setLoading] = useState(false);
     const [paymentStatus, setPaymentStatus] = useState('');
     
-// console.log(userdetail)
+// (userdetail)
     const handlePay = async () => {
        if (!stripe || !elements) {
           setPaymentStatus("Stripe or Elements not loaded.");
@@ -183,7 +183,7 @@ const PaymentForm = ({wor,per,study,floor,ent,cro}) => {
        setLoading(true);
  
        try {
-          const res = await axios.post("http://localhost:3000/payment", {
+          const res = await axios.post("https://nivibe.onrender.com/payment", {
              amount: 500*100, // Replace with actual amount
              currency: "inr"
           });
@@ -206,9 +206,9 @@ const PaymentForm = ({wor,per,study,floor,ent,cro}) => {
                 setPaymentStatus("Payment succeeded!");
                 alert("Payment successful!");
                   try {
-                     // console.log(wor,per,study,floor,ent,cro)
+                     // (wor,per,study,floor,ent,cro)
                      // setloader(true)
-                    const res= await axios.post("http://localhost:3000/appointments/book",{
+                    const res= await axios.post("https://nivibe.onrender.com/appointments/book",{
                         entertainment:ent,
                         crockery:cro,
                         floors:floor,

@@ -14,7 +14,7 @@ const Message = () => {
 
   const fetchData = useCallback(async () => {
     try {
-      const res = await axios.post("http://localhost:3000/msg/view", {}, {
+      const res = await axios.post("https://nivibe.onrender.com/msg/view", {}, {
         withCredentials: true,
       });
       const data=Array.isArray(res.data)?res.data:[]
@@ -22,7 +22,7 @@ const Message = () => {
         val.reciver === datas || val.user === datas
       );
       setData(filteredData);
-      // console.log(filteredData,datas)
+      // (filteredData,datas)
     } catch (error) {
       console.error(error);
     }
@@ -42,7 +42,7 @@ const Message = () => {
 
   const handleSend = async () => {
     try {
-      await axios.post("http://localhost:3000/msg/send", {
+      await axios.post("https://nivibe.onrender.com/msg/send", {
         usermsg: msgs,
         user: datas
       }, {

@@ -18,13 +18,13 @@ const Authside = () => {
 
     useEffect(()=>{
         const fetchData=async()=>{
-               const res=await axios.post("http://localhost:3000/users/users",{},{
+               const res=await axios.post("https://nivibe.onrender.com/users/users",{},{
                 withCredentials:true
                })
                const data=userdetail.email?userdetail.email:""
                const org=res.data.filter(val=>val.role=="user"&&val.email!==data)
                setusers(org)
-              //  console.log(org,data,res.data)
+              //  (org,data,res.data)
         }
         fetchData()
     },[loader])
@@ -36,7 +36,7 @@ const Authside = () => {
    const handledelete=async(email)=>{
     try {
         setloader(true)
-        const res=await axios.post("http://localhost:3000/users/deleteuser",{
+        const res=await axios.post("https://nivibe.onrender.com/users/deleteuser",{
           mail:email
         },{
             withCredentials:true
@@ -50,7 +50,7 @@ const Authside = () => {
         setloader(false)
       }
    }
-  //  console.log(msgg)
+  //  (msgg)
   //  const ismsg=(num)=>{
   //       setmsgg(num)
   //  }
