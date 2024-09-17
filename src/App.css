@@ -71,7 +71,9 @@
         margin-left: 10%;
         color: blueviolet;
         font-weight: bold;
-        text-shadow: 2px 2px 2px #800020;
+        text-shadow: 2px 1px 1px #800020;
+        backdrop-filter: blur(1px);
+        border-radius: 10px;
     }
 }
 .signin{
@@ -391,6 +393,7 @@
     }
 }
 @media  screen and (min-width:479px) {
+   
     .footlane{
         button{
             margin-top: 10px;
@@ -414,6 +417,18 @@
 }
 
 @media  screen and (max-width:518px) {
+    .homebg{
+        h1{
+            /* position: relative; */
+           font-size: 25px; 
+           color: blueviolet;
+           text-shadow: none;
+           backdrop-filter: blur(2px);
+           border-radius: 10px;
+           padding: 5px;
+           text-shadow: 2px 1px 1px #800020;
+        }
+    }
     .changelane{
      div{
          h5{
@@ -1093,7 +1108,7 @@
         color: red;
         font-size: 14px;
       }
-      .logoutt{
+      .logoutt,.logouttt{
         display: none;
       }
       @media screen and (max-width:576px){
@@ -1108,4 +1123,19 @@
         color: white;
         border-radius: 4px;
         padding: 5px;
-      }}
+      }
+    .logouttt{
+        
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            background-color: blueviolet;
+            border: 0px;
+            color: white;
+            border-radius: 4px;
+            padding: 5px;
+          
+    }
+    }
