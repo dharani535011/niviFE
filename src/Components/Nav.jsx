@@ -30,7 +30,7 @@ const Nav = () => {
     <div>
        <nav className='customnav'>
         <div><i className="fa-solid fa-house fa-2x" onClick={()=>navigate("/")}></i><span onClick={()=>navigate("/")}>NIVI INTERIORS</span></div>
-        <div><button onClick={()=>navigate("/getestimate")}>get estimate</button></div>
+        {userdetail.role=="auth"&&<div><button onClick={()=>navigate("/getestimate")}>get estimate</button></div>}
         {!auth?<div><button onClick={()=>navigate("/signin")}>Sign In/Up</button></div>:<div><button onClick={handlelogout}>Logout</button></div>}
         {userdetail.role=="auth"&&<div><button onClick={()=>navigate("/authside")}>Authors</button></div>}
        </nav>
